@@ -54,48 +54,30 @@
 
 ---
 
-## Simple Examples
+## Visual Examples
 
-### Example 1: The Inverse Square Law in Action
+### LED Light (Inverse Square Law)
 ```
 LED Light
    │
-   │ 1 meter → 100% (reference)
+   │ 1m → 100% (reference)
    │
-   │ 2 meters → 25%
+   │ 2m → 25%
    │
-   │ 3 meters → 11%
+   │ 3m → 11%
    │
-   │ 4 meters → 6.25%
+   │ 4m → 6.25%
    ▼
 ```
 
-### Example 2: Comparing Distances (1m = 100% reference)
-```
-Distance from LED    │  Relative Intensity
-─────────────────────┼────────────────────
-1 meter              │  100% (reference)
-2 meters             │  25%
-3 meters             │  11%
-4 meters             │  6.25%
-```
-
-### Example 3: Intensity at Each Distance
-```
-LED at 1m from plants → 100% (reference)
-LED at 2m from plants → 25%
-LED at 3m from plants → 11%
-LED at 4m from plants → 6.25%
-```
-
-### Example 3: Natural Sunlight
+### Natural Sunlight
 ```
 Sun (150 million km away)
    │
    │ Distance doesn't change
    │
    ▼
-Plants ← Get full sunlight (height doesn't matter)
+Plants ← Full sunlight (height doesn't matter)
 ```
 
 ---
