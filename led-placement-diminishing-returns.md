@@ -172,6 +172,8 @@ The sun's position changes dramatically throughout the year, fundamentally alter
 **Implications for Glasshouse Design**:
 
 ```
+SIDE VIEW (cross-section, looking from east or west):
+
 Summer Solstice (62°):           Winter Solstice (15°):
          ☀️                              ☀️
           │                                \
@@ -184,6 +186,8 @@ Summer Solstice (62°):           Winter Solstice (15°):
          │                                    │
     Light penetrates                   Light enters
     from above                         from the side
+    ══════════════                     ══════════════
+        Floor                              Floor
 ```
 
 **Seasonal Light Behaviour**:
@@ -238,6 +242,8 @@ For a 4m structure:
 In vertical farming systems, each shelf level receives fundamentally different light. A typical configuration comprises 4 shelf levels: **Shelves 1 and 2 are single aspect**, while **Shelves 3 and 4 are double aspect with east and west facing sides**.
 
 ```
+SIDE VIEW (cross-section, looking from the south):
+
 Glasshouse Cross-Section (4-Shelf Configuration):
                     ┌─────────────────────────────────┐
                     │            Roof glazing          │
@@ -258,6 +264,8 @@ Glasshouse Cross-Section (4-Shelf Configuration):
 │ Shelf 1 (Single) │      Centre aspect        │ 10-25%          │
 │    (Bottom)      │                           │ Severe limitation│
 └─────────────────────────────────────────────────────────────────┘
+    ════════════════════════════════════════════════════════════
+                               Floor
 ```
 
 **Shelf Configuration Summary**:
@@ -352,28 +360,6 @@ Plants have evolved sophisticated mechanisms to detect and respond to shading. T
 Human perception of light (lux, lumens) does not correlate with plant-usable radiation. A space that appears "bright" to humans may be severely light-limited for plants, and vice versa.
 
 **Recommended Equipment**: Apogee ePAR sensors are the industry standard for horticultural light measurement. Apogee sensors provide accurate, calibrated measurements across the full extended photosynthetically active spectrum (400-750nm) with excellent cosine correction for oblique-angle readings.
-
-**Sensor Deployment Strategy**:
-
-```
-Recommended Apogee ePAR Sensor Placement:
-┌───────────────────────────────────────────────────────────────┐
-│ Shelf 4 (Double)  [Sensor-E]─────────────[Sensor-W]           │
-│                    East aspect            West aspect          │
-├───────────────────────────────────────────────────────────────┤
-│ Shelf 3 (Double)  [Sensor-E]─────────────[Sensor-W]           │
-│                    East aspect            West aspect          │
-├───────────────────────────────────────────────────────────────┤
-│ Shelf 2 (Single)        [Sensor-Centre]                       │
-│                          Centre aspect                         │
-├───────────────────────────────────────────────────────────────┤
-│ Shelf 1 (Single)        [Sensor-Centre]                       │
-│                          Centre aspect                         │
-└───────────────────────────────────────────────────────────────┘
-
-Minimum sensors required: 6 (2 per double shelf, 1 per single shelf)
-Recommended: Additional sensors at shelf ends to capture spatial variation
-```
 
 **Data-Driven Decision Making**:
 

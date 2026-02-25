@@ -148,21 +148,25 @@ In a glasshouse with vertical shelving, light becomes complicated. Unlike open f
 
 ### The A-Frame Shading Problem
 
-A typical 4-metre A-frame structure creates shadows:
+A typical 4-metre A-frame structure creates shadows that extend across the floor.
 
 ```
+SIDE VIEW (looking from the east or west):
+
 Summer (high sun):              Winter (low sun):
       ☀️ (62°)                        ☀️ (15°)
         \                               \
          \                               \
     ┌─────┐                         ┌─────┐
     │  A  │                         │  A  │
-    │frame│ ← Short shadow          │frame│ ← Long shadow
+    │frame│                         │frame│
     └─────┘                         └─────┘
-      ▓▓                              ▓▓▓▓▓▓▓▓▓▓▓▓
+      ▓▓ ← Short shadow               ▓▓▓▓▓▓▓▓▓▓▓▓ ← Long shadow
+    ══════════════════            ══════════════════════════════
+         Floor                              Floor
 ```
 
-**Shadow length from a 4m structure**:
+**Shadow length from a 4m structure** (measured along floor from base):
 - Summer (62° sun): ~2m shadow
 - Equinox (38° sun): ~5m shadow
 - Winter (15° sun): ~15m shadow
@@ -172,6 +176,8 @@ Summer (high sun):              Winter (low sun):
 A typical vertical growing setup has 4 shelf levels with different configurations:
 
 ```
+SIDE VIEW (cross-section, looking from the south):
+
 ┌─────────────────────────────────────────────────────┐
 │ Shelf 4 (Double)  │  EAST  │  WEST  │ ← Top level  │
 │                   │ facing │ facing │   Most light │
@@ -185,6 +191,8 @@ A typical vertical growing setup has 4 shelf levels with different configuration
 │ Shelf 1 (Single)  │        │        │ ← Bottom     │
 │                   │ centre │        │   Low light  │
 └─────────────────────────────────────────────────────┘
+    ═══════════════════════════════════════════════
+                        Floor
 ```
 
 **Shelf Configuration**:
