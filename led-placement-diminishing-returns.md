@@ -26,14 +26,17 @@ This document applies the inverse square law to LED lighting placement in agricu
 
 ### The Rule: Double the Distance = Quarter the Light
 
-Light intensity diminishes according to the inverse square law:
+Light intensity diminishes according to the inverse square law.
 
-- **At 1 metre**: Reference intensity - call this 100%
-- **At 2 metres**: 25% of the 1-metre intensity
-- **At 3 metres**: 11% of the 1-metre intensity
-- **At 4 metres**: 6.25% of the 1-metre intensity
+**Establishing the Reference (Baseline)**:
+The reference distance is the distance from the LED to the nearest shelf - this is your baseline measurement (100%). All other intensities are calculated relative to this baseline.
 
-**Why?** Light spreads out in all directions from a point source. When you double the distance, the same light energy covers 4× the area, resulting in ¼ the intensity.
+- **At reference distance (LED to nearest shelf)**: 100% intensity (baseline)
+- **At 2× reference distance**: 25% of baseline intensity
+- **At 3× reference distance**: 11% of baseline intensity
+- **At 4× reference distance**: 6.25% of baseline intensity
+
+**Why?** Light spreads out in all directions from a point source. When you double the distance from your baseline, the same light energy covers 4× the area, resulting in ¼ the intensity.
 
 ---
 
@@ -232,33 +235,61 @@ For a 4m structure:
 
 ### Multi-Level Shelf Light Distribution
 
-In vertical farming systems, each shelf level receives fundamentally different light:
+In vertical farming systems, each shelf level receives fundamentally different light. A typical configuration comprises 4 shelf levels: **Shelves 1 and 2 are single aspect**, while **Shelves 3 and 4 are double aspect with east and west facing sides**.
 
 ```
-Glasshouse Cross-Section:
+Glasshouse Cross-Section (4-Shelf Configuration):
                     ┌─────────────────────────────────┐
                     │            Roof glazing          │
                     └─────────────────────────────────┘
                                     │
                               Natural light
                                     ▼
-┌─────────────────────────────────────────────────────────┐
-│ Level 4 (Top)    │ 100% available light                 │
-│                  │ Direct sun + diffuse                 │
-├─────────────────────────────────────────────────────────┤
-│ Level 3          │ 50-70% │ Shaded by Level 4 canopy   │
-├─────────────────────────────────────────────────────────┤
-│ Level 2          │ 25-40% │ Cumulative shading         │
-├─────────────────────────────────────────────────────────┤
-│ Level 1 (Bottom) │ 10-20% │ Severe light limitation    │
-└─────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ Shelf 4 (Double) │ EAST aspect │ WEST aspect │ 100% available  │
+│     (Top)        │   morning   │  afternoon  │ Direct + diffuse│
+├─────────────────────────────────────────────────────────────────┤
+│ Shelf 3 (Double) │ EAST aspect │ WEST aspect │ 60-80%          │
+│                  │   morning   │  afternoon  │ Shaded by Shelf 4│
+├─────────────────────────────────────────────────────────────────┤
+│ Shelf 2 (Single) │      Centre aspect        │ 30-50%          │
+│                  │                           │ Cumulative shade │
+├─────────────────────────────────────────────────────────────────┤
+│ Shelf 1 (Single) │      Centre aspect        │ 10-25%          │
+│    (Bottom)      │                           │ Severe limitation│
+└─────────────────────────────────────────────────────────────────┘
 ```
+
+**Shelf Configuration Summary**:
+
+| Shelf | Type | Aspects | Typical Light | Notes |
+|-------|------|---------|---------------|-------|
+| 4 | Double | East + West | 100% | Top level, maximum exposure |
+| 3 | Double | East + West | 60-80% | Good light, some shading from above |
+| 2 | Single | Centre | 30-50% | Moderate light, cumulative shading |
+| 1 | Single | Centre | 10-25% | Lowest light, requires supplementation |
+
+**East vs West Aspect Dynamics**:
+
+The double shelves (3 and 4) present different light environments on each side:
+
+| Time Period | East Aspect | West Aspect |
+|-------------|-------------|-------------|
+| Morning (6am-12pm) | Direct sun exposure | Shaded/diffuse only |
+| Solar noon (12pm) | Transitioning | Transitioning |
+| Afternoon (12pm-6pm) | Shaded/diffuse only | Direct sun exposure |
+
+**Implications for Crop Placement**:
+- **East aspects**: Better for crops sensitive to afternoon heat stress
+- **West aspects**: Better for crops requiring maximum light accumulation
+- **Single shelves (1 & 2)**: Require careful crop selection or supplemental LED lighting
 
 **Light Attenuation Factors**:
 1. **Structural shading**: Shelf frames, supports, irrigation systems
 2. **Canopy shading**: Upper-level plants block light to lower levels
 3. **Glazing transmission**: Glass/polycarbonate typically transmits 85-90% of light
 4. **Cumulative losses**: Each level compounds the reduction
+5. **Aspect orientation**: East/west aspects receive asymmetric light throughout the day
 
 ### Shade Avoidance Syndrome (SAS)
 
@@ -288,11 +319,11 @@ Plants have evolved sophisticated mechanisms to detect and respond to shading. T
 
 ### ePAR: Extended Photosynthetically Active Radiation
 
-**Definition**: ePAR encompasses the wavelengths of light that drive photosynthesis in plants, traditionally defined as **400-700nm** (PAR), with emerging research suggesting extension to **380-780nm** for complete photomorphogenic effects.
+**Definition**: ePAR encompasses the wavelengths of light that drive photosynthesis in plants, defined as **400-750nm**. This extends beyond traditional PAR (400-700nm) to include far-red wavelengths that influence photomorphogenesis and the Emerson enhancement effect.
 
 **Measurement**:
 - Unit: **µmol/m²/s** (micromoles of photons per square metre per second)
-- Instrument: Quantum sensor (PAR meter)
+- Instrument: Apogee ePAR quantum sensor
 - Integration: Daily Light Integral (DLI) = µmol/m²/s × hours × 0.0036 = mol/m²/day
 
 **ePAR Requirements by Crop Category**:
@@ -314,30 +345,34 @@ Plants have evolved sophisticated mechanisms to detect and respond to shading. T
 | Above optimal | Wasted energy, no additional benefit | Unnecessary electricity costs |
 | Above maximum | Leaf bleaching, heat stress, photoinhibition | Crop damage; reduced quality |
 
-### The Critical Role of PAR Sensors
+### The Critical Role of ePAR Sensors
 
 **Why Measurement is Non-Negotiable**:
 
 Human perception of light (lux, lumens) does not correlate with plant-usable radiation. A space that appears "bright" to humans may be severely light-limited for plants, and vice versa.
 
+**Recommended Equipment**: Apogee ePAR sensors are the industry standard for horticultural light measurement. Apogee sensors provide accurate, calibrated measurements across the full extended photosynthetically active spectrum (400-750nm) with excellent cosine correction for oblique-angle readings.
+
 **Sensor Deployment Strategy**:
 
 ```
-Recommended Sensor Placement:
-┌─────────────────────────────────────────────────────────┐
-│ Level 4    [Sensor]──────────────────────[Sensor]       │
-├─────────────────────────────────────────────────────────┤
-│ Level 3    [Sensor]──────────────────────[Sensor]       │
-├─────────────────────────────────────────────────────────┤
-│ Level 2    [Sensor]──────────────────────[Sensor]       │
-├─────────────────────────────────────────────────────────┤
-│ Level 1    [Sensor]──────────────────────[Sensor]       │
-└─────────────────────────────────────────────────────────┘
-              East side                    West side
+Recommended Apogee ePAR Sensor Placement:
+┌───────────────────────────────────────────────────────────────┐
+│ Shelf 4 (Double)  [Sensor-E]─────────────[Sensor-W]           │
+│                    East aspect            West aspect          │
+├───────────────────────────────────────────────────────────────┤
+│ Shelf 3 (Double)  [Sensor-E]─────────────[Sensor-W]           │
+│                    East aspect            West aspect          │
+├───────────────────────────────────────────────────────────────┤
+│ Shelf 2 (Single)        [Sensor-Centre]                       │
+│                          Centre aspect                         │
+├───────────────────────────────────────────────────────────────┤
+│ Shelf 1 (Single)        [Sensor-Centre]                       │
+│                          Centre aspect                         │
+└───────────────────────────────────────────────────────────────┘
 
-Minimum: 1 sensor per shelf level
-Recommended: 2+ sensors per level (capture E-W variation)
-Ideal: Continuous monitoring with data logging
+Minimum sensors required: 6 (2 per double shelf, 1 per single shelf)
+Recommended: Additional sensors at shelf ends to capture spatial variation
 ```
 
 **Data-Driven Decision Making**:
@@ -350,8 +385,8 @@ Ideal: Continuous monitoring with data logging
 | Over-lighting (waste) or under-lighting (poor yield) | Optimised energy use and plant performance |
 | Reactive problem-solving | Proactive management |
 
-**Sensor Selection Criteria**:
-- **Spectral range**: Must cover 400-700nm minimum; 380-780nm preferred
+**Sensor Selection Criteria** (Apogee ePAR sensors meet all criteria):
+- **Spectral range**: Must cover 400-750nm (ePAR range)
 - **Cosine correction**: Essential for accurate readings at oblique angles
 - **Calibration**: NIST-traceable calibration recommended
 - **Data logging**: Continuous recording enables DLI calculation and trend analysis
@@ -461,7 +496,7 @@ Misting also affects thermal (infrared) radiation:
 | Evening (5pm+) | Low | Safe to mist |
 
 **Sensor-Driven Control**:
-- Link misting to PAR sensors: suppress misting when PAR exceeds threshold
+- Link misting to Apogee ePAR sensors: suppress misting when PAR exceeds threshold
 - Implement humidity-based triggers rather than time-based schedules
 - Use VPD (Vapour Pressure Deficit) control for optimal balance
 
@@ -476,7 +511,7 @@ Misting also affects thermal (infrared) radiation:
 **The Glasshouse Light Management Framework**:
 
 1. **Baseline Assessment**
-   - Install PAR sensors at all growing positions
+   - Install Apogee ePAR sensors at all growing positions
    - Record ePAR readings hourly for minimum 2 weeks
    - Map light distribution across all levels and seasons
 
@@ -508,8 +543,8 @@ Misting also affects thermal (infrared) radiation:
 
 **Step-by-Step Calculation for LEDs:**
 
-1. **Choose a reference distance** (e.g., 1m = reference intensity I)
-2. **Measure new distance** (e.g., 2m)
+1. **Establish reference distance**: Measure from LED to nearest shelf (this is your baseline = 100%)
+2. **Measure new distance** (e.g., if baseline is 0.5m, new distance might be 1m)
 3. **Calculate ratio**: Reference Distance ÷ New Distance
    - Example: 1 ÷ 2 = 0.5
 4. **Square the ratio**: (Ratio)²
@@ -519,14 +554,16 @@ Misting also affects thermal (infrared) radiation:
 
 **Result**: At 2m, you get 25% of the light intensity you had at 1m.
 
-### Quick Reference Table (Relative to 1m Reference)
+### Quick Reference Table (Relative to Baseline)
 
-| Distance | Intensity | Calculation |
-|----------|-----------|-------------|
-| 1m       | 100% (reference) | 1/(1)² = 1 |
-| 2m       | 25%       | 1/(2)² = 0.25 |
-| 3m       | 11%       | 1/(3)² = 0.11 |
-| 4m       | 6.25%     | 1/(4)² = 0.0625 |
+The reference distance (baseline) is the distance from LED to nearest shelf.
+
+| Distance Multiple | Intensity | Calculation |
+|-------------------|-----------|-------------|
+| 1× baseline (nearest shelf) | 100% (reference) | 1/(1)² = 1 |
+| 2× baseline | 25% | 1/(2)² = 0.25 |
+| 3× baseline | 11% | 1/(3)² = 0.11 |
+| 4× baseline | 6.25% | 1/(4)² = 0.0625 |
 
 ### Inverse Square Law Formula
 
@@ -539,7 +576,7 @@ Where:
   d₁ = Reference distance (e.g., 1m)
   d₂ = New distance (e.g., 2m)
 
-Using 1m as 100% reference shows how intensity diminishes with distance.
+Using the distance to the nearest shelf as 100% reference (baseline) shows how intensity diminishes with distance.
 ```
 
 ### Implementation (Pseudocode)
@@ -641,7 +678,7 @@ def calculate_shadow_length(structure_height, solar_elevation_degrees):
 ## Key Takeaways
 
 ### LED Physics
-1. ✅ **Use 1m as reference (100%)** - compare all other distances to this
+1. ✅ **Reference = LED to nearest shelf** - this baseline distance is your 100%
 2. ✅ **Double the distance = quarter the light** (inverse square law)
 3. ✅ **Halve the distance = quadruple the light** (works both ways)
 
@@ -654,7 +691,7 @@ def calculate_shadow_length(structure_height, solar_elevation_degrees):
 7. ✅ **Each shelf level receives different light** - top may get 100%, bottom only 10-20%
 8. ✅ **Shade avoidance syndrome is real** - plants stretch, weaken, and underperform in low light
 9. ✅ **ePAR measurement is non-negotiable** - human perception of brightness is irrelevant to plants
-10. ✅ **PAR sensors enable data-driven decisions** - guessing is not a strategy
+10. ✅ **Apogee ePAR sensors enable data-driven decisions** - guessing is not a strategy
 
 ### Misting and Environmental Control
 11. ✅ **Misting reduces PAR by 10-30%** - water droplets scatter and reflect incoming light

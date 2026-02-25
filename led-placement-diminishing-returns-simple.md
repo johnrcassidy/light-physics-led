@@ -24,12 +24,15 @@
 - Spread out light = weaker light for your plants
 
 **How Light Diminishes** (Inverse Square Law):
-- **At 1 metre**: Reference intensity (call this 100%)
-- **At 2 metres**: 25% of the 1-metre value
-- **At 3 metres**: 11% of the 1-metre value
-- **At 4 metres**: 6.25% of the 1-metre value
 
-**The Rule**: Every time you double the distance, you get only **one-quarter** of the light.
+The **reference distance** is the distance from the LED to the nearest shelf - this is your baseline (100%).
+
+- **At reference distance**: 100% intensity (baseline)
+- **At 2× reference**: 25% of baseline
+- **At 3× reference**: 11% of baseline
+- **At 4× reference**: 6.25% of baseline
+
+**The Rule**: Every time you double the distance from your baseline, you get only **one-quarter** of the light.
 
 **What This Means**:
 - If your LEDs are too high, your plants won't get enough light
@@ -166,20 +169,38 @@ Summer (high sun):              Winter (low sun):
 
 ### Multi-Level Shelving: Each Level is Different
 
+A typical vertical growing setup has 4 shelf levels with different configurations:
+
 ```
-┌─────────────────────────────┐
-│ Top shelf    │ Most light   │ ← Best for high-light crops
-├─────────────────────────────┤
-│ Middle shelf │ Partial shade│ ← Moderate-light crops
-├─────────────────────────────┤
-│ Bottom shelf │ Heavy shade  │ ← Low-light crops only
-└─────────────────────────────┘
+┌─────────────────────────────────────────────────────┐
+│ Shelf 4 (Double)  │  EAST  │  WEST  │ ← Top level  │
+│                   │ facing │ facing │   Most light │
+├─────────────────────────────────────────────────────┤
+│ Shelf 3 (Double)  │  EAST  │  WEST  │ ← Upper-mid  │
+│                   │ facing │ facing │   Good light │
+├─────────────────────────────────────────────────────┤
+│ Shelf 2 (Single)  │        │        │ ← Lower-mid  │
+│                   │ centre │        │   Mod. light │
+├─────────────────────────────────────────────────────┤
+│ Shelf 1 (Single)  │        │        │ ← Bottom     │
+│                   │ centre │        │   Low light  │
+└─────────────────────────────────────────────────────┘
 ```
 
+**Shelf Configuration**:
+- **Shelves 1 & 2**: Single aspect (centre-facing)
+- **Shelves 3 & 4**: Double aspect (east-facing and west-facing sides)
+
 **The Reality**:
-- Top shelves may get 100% available light
-- Middle shelves may get 40-60%
-- Bottom shelves may get only 10-20%
+- Shelf 4: May get 100% available light (both E and W aspects)
+- Shelf 3: 60-80% (shaded by Shelf 4 above)
+- Shelf 2: 30-50% (cumulative shading)
+- Shelf 1: 10-25% (severe light limitation)
+
+**East vs West Aspects**:
+- **East-facing**: Morning sun, cooler afternoon shade
+- **West-facing**: Afternoon sun, morning shade
+- Light levels differ throughout the day on double shelves
 
 ### Shade Avoidance Response
 
@@ -195,7 +216,7 @@ This is called the **shade avoidance response** - plants waste energy trying to 
 
 **What is ePAR?**
 - ePAR = Extended Photosynthetically Active Radiation
-- The wavelengths plants use: **400-700nm** (visible light)
+- The wavelengths plants use: **400-750nm** (visible light plus far-red)
 - Measured in **µmol/m²/s** (micromoles per square metre per second)
 
 **Target ePAR Ranges**:
@@ -210,9 +231,11 @@ This is called the **shade avoidance response** - plants waste energy trying to 
 **Below minimum ePAR**: Poor growth, weak plants, low yields
 **Above maximum ePAR**: Wasted energy, potential light stress
 
-### Why PAR Sensors Are Critical
+### Why ePAR Sensors Are Critical
 
 **You cannot guess light levels.** You must measure them.
+
+**Recommended Sensor**: Apogee ePAR sensors measure the full extended PAR range (400-750nm) that plants use for photosynthesis, providing accurate readings for horticultural applications.
 
 **Without sensors, you're guessing**:
 - How much light reaches each shelf?
@@ -263,7 +286,7 @@ Without mist:               With mist:
 
 ### Simple Glasshouse Checklist
 
-✅ **Measure first**: Install PAR sensors before making decisions
+✅ **Measure first**: Install Apogee ePAR sensors before making decisions
 ✅ **Map your light**: Record ePAR at each shelf level, multiple times per day
 ✅ **Track seasons**: Light in July ≠ light in December
 ✅ **Match crops to light**: Put high-light crops on top shelves
@@ -287,7 +310,7 @@ Without mist:               With mist:
 **For Glasshouse Vertical Growing**:
 - Every shelf level is different - measure, don't assume
 - Winter light ≠ summer light
-- PAR sensors are essential, not optional
+- Apogee ePAR sensors are essential, not optional
 - Match crops to available light at each position
 
 **For Misting Systems**:
