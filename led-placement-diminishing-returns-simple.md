@@ -127,6 +127,152 @@ Plants ← Full sunlight (height doesn't matter)
 
 ---
 
+## Glasshouse Vertical Growing: What You Need to Know
+
+In a glasshouse with vertical shelving, light becomes complicated. Unlike open fields, you're dealing with structures, seasons, and multiple growing levels.
+
+### The Sun Moves - Your Light Changes
+
+**Throughout the Year**:
+- **Summer solstice** (June 21): Sun is highest in the sky (~62° at UK latitudes)
+- **Winter solstice** (December 21): Sun is lowest (~15° at UK latitudes)
+- **Equinoxes** (March 21, September 21): Sun at middle height (~38°)
+
+**What This Means**:
+- In summer, light comes from almost directly overhead
+- In winter, light comes in at a low angle through the sides
+- Your shelves receive very different light depending on the season
+
+### The A-Frame Shading Problem
+
+A typical 4-metre A-frame structure creates shadows:
+
+```
+Summer (high sun):              Winter (low sun):
+      ☀️ (62°)                        ☀️ (15°)
+        \                               \
+         \                               \
+    ┌─────┐                         ┌─────┐
+    │  A  │                         │  A  │
+    │frame│ ← Short shadow          │frame│ ← Long shadow
+    └─────┘                         └─────┘
+      ▓▓                              ▓▓▓▓▓▓▓▓▓▓▓▓
+```
+
+**Shadow length from a 4m structure**:
+- Summer (62° sun): ~2m shadow
+- Equinox (38° sun): ~5m shadow
+- Winter (15° sun): ~15m shadow
+
+### Multi-Level Shelving: Each Level is Different
+
+```
+┌─────────────────────────────┐
+│ Top shelf    │ Most light   │ ← Best for high-light crops
+├─────────────────────────────┤
+│ Middle shelf │ Partial shade│ ← Moderate-light crops
+├─────────────────────────────┤
+│ Bottom shelf │ Heavy shade  │ ← Low-light crops only
+└─────────────────────────────┘
+```
+
+**The Reality**:
+- Top shelves may get 100% available light
+- Middle shelves may get 40-60%
+- Bottom shelves may get only 10-20%
+
+### Shade Avoidance Response
+
+Plants know when they're being shaded. They respond by:
+- **Stretching** towards light (etiolation)
+- **Thinner leaves** to capture more light
+- **Reduced flowering** and fruiting
+- **Pale, weak growth**
+
+This is called the **shade avoidance response** - plants waste energy trying to outgrow their neighbours instead of producing fruit.
+
+### ePAR: The Light Plants Actually Use
+
+**What is ePAR?**
+- ePAR = Extended Photosynthetically Active Radiation
+- The wavelengths plants use: **400-700nm** (visible light)
+- Measured in **µmol/m²/s** (micromoles per square metre per second)
+
+**Target ePAR Ranges**:
+
+| Crop Type | ePAR Range (µmol/m²/s) |
+|-----------|------------------------|
+| Leafy greens | 200-400 |
+| Herbs | 300-500 |
+| Tomatoes, peppers | 400-600 |
+| High-light crops | 600-1000+ |
+
+**Below minimum ePAR**: Poor growth, weak plants, low yields
+**Above maximum ePAR**: Wasted energy, potential light stress
+
+### Why PAR Sensors Are Critical
+
+**You cannot guess light levels.** You must measure them.
+
+**Without sensors, you're guessing**:
+- How much light reaches each shelf?
+- How does it change through the day?
+- How does it change through the seasons?
+- Are your LEDs actually helping?
+
+**With sensors, you know**:
+- Exact ePAR at each growing position
+- When natural light is sufficient
+- When to turn LEDs on/off
+- Which shelves need supplemental lighting
+
+### Misting and Fogging: The Hidden Light Blocker
+
+Misting systems are essential for humidity and cooling, but they affect light in ways growers often overlook.
+
+**What Happens When You Mist**:
+```
+Without mist:               With mist:
+     ☀️                          ☀️
+      │                           │
+      │ (direct light)           ░░░ ← Water droplets
+      │                          ░░░   scatter light
+      ▼                           │
+   Plants                        ▼
+   (100% light)               Plants
+                              (reduced light)
+```
+
+**How Mist Reduces Light**:
+- Water droplets **scatter** incoming light in all directions
+- Some light is **reflected** back upward, never reaching plants
+- Fine mist creates a "fog" that blocks direct radiation
+- Effect is worse with fine droplets (more surface area)
+
+**The Impact**:
+- Heavy misting can reduce PAR by **10-30%**
+- Effect is temporary but cumulative over day
+- Lower shelves affected more (light passes through multiple mist zones)
+
+**Practical Advice**:
+- Time misting for early morning or late afternoon when light is less critical
+- Avoid misting during peak sunlight hours (10am-2pm)
+- Use coarser droplets where possible (less scattering)
+- Monitor PAR during misting cycles to understand actual impact
+- Factor misting losses into your DLI calculations
+
+### Simple Glasshouse Checklist
+
+✅ **Measure first**: Install PAR sensors before making decisions
+✅ **Map your light**: Record ePAR at each shelf level, multiple times per day
+✅ **Track seasons**: Light in July ≠ light in December
+✅ **Match crops to light**: Put high-light crops on top shelves
+✅ **Supplement strategically**: Use LEDs only where and when needed
+✅ **Watch for shade avoidance**: Stretchy, pale plants = not enough light
+✅ **Time your misting**: Avoid misting during peak light hours
+
+---
+
 ## Bottom Line
 
 **For LED Lights**:
@@ -135,12 +281,22 @@ Plants ← Full sunlight (height doesn't matter)
 - Double the distance = quarter the light (inverse square law)
 
 **For Natural Sunlight**:
-- Distance doesn't matter
-- Plant height won't affect sunlight
-- The sun is already so far away
+- Distance doesn't matter for intensity
+- But angle, season, and structures change everything in a glasshouse
+
+**For Glasshouse Vertical Growing**:
+- Every shelf level is different - measure, don't assume
+- Winter light ≠ summer light
+- PAR sensors are essential, not optional
+- Match crops to available light at each position
+
+**For Misting Systems**:
+- Misting can reduce light by 10-30%
+- Lower shelves are hit hardest (they rely on diffuse light)
+- Time misting for early morning or late afternoon, not peak sunlight
 
 **Key Takeaway**: 
-LED placement is important. Natural sunlight placement isn't. Keep your LEDs close to get the most out of them.
+You cannot manage what you do not measure. Install PAR sensors, map your light environment, and make data-driven decisions.
 
 ---
 

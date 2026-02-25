@@ -150,11 +150,363 @@ Natural Sun (Far):
 
 ---
 
-## The Algorithm (Simple Form)
+## Glasshouse Vertical Growing Environments
 
-### Step-by-Step Calculation
+Vertical growing in glasshouses introduces complex light dynamics that demand careful analysis. Unlike open-field agriculture, controlled environment agriculture (CEA) must account for structural shading, seasonal solar progression, multi-level canopy management, and plant physiological responses to suboptimal light.
 
-**For LEDs:**
+### Solar Progression: Equinoxes and Solstices
+
+The sun's position changes dramatically throughout the year, fundamentally altering light distribution within a glasshouse.
+
+**Solar Elevation Angles (UK latitudes, ~52°N)**:
+
+| Date | Event | Solar Elevation (noon) | Day Length |
+|------|-------|------------------------|------------|
+| June 21 | Summer Solstice | ~62° | ~16.5 hours |
+| March 21 / Sept 21 | Equinoxes | ~38° | ~12 hours |
+| December 21 | Winter Solstice | ~15° | ~7.5 hours |
+
+**Implications for Glasshouse Design**:
+
+```
+Summer Solstice (62°):           Winter Solstice (15°):
+         ☀️                              ☀️
+          │                                \
+          │ (steep angle)                   \ (shallow angle)
+          ▼                                  \
+    ┌──────────┐                        ┌──────────┐
+    │ Glasshouse│                       │ Glasshouse│
+    │  roof    │                        │  roof    │
+    └──────────┘                        └──────────┘
+         │                                    │
+    Light penetrates                   Light enters
+    from above                         from the side
+```
+
+**Seasonal Light Behaviour**:
+- **Summer**: High sun angle means light enters predominantly through the roof. Upper shelves receive direct light; lower shelves are shaded by upper structures.
+- **Winter**: Low sun angle means light enters through side walls. Orientation becomes critical - south-facing walls receive most light.
+- **Equinoxes**: Transitional periods where both roof and wall transmission contribute significantly.
+
+### Photoperiod Dynamics
+
+Photoperiod (day length) affects plant development independently of light intensity:
+
+**Photoperiod-Sensitive Responses**:
+- **Long-day plants** (lettuce, spinach): Flower when days exceed ~14 hours
+- **Short-day plants** (chrysanthemums, poinsettias): Flower when days fall below ~12 hours
+- **Day-neutral plants** (tomatoes, peppers): Flower based on maturity, not day length
+
+**Glasshouse Considerations**:
+- Natural photoperiod varies from 7.5 hours (winter) to 16.5 hours (summer) at UK latitudes
+- Supplemental lighting extends photoperiod but must be managed to avoid triggering unwanted flowering
+- Blackout systems may be required for short-day crop production in summer
+
+### A-Frame and Structural Shading
+
+A 4-metre A-frame structure (common in glasshouse construction) creates predictable shadow patterns based on solar geometry.
+
+**Shadow Length Calculation**:
+
+```
+Shadow Length = Structure Height / tan(Solar Elevation Angle)
+
+For a 4m structure:
+- Summer (62°): 4 / tan(62°) = 4 / 1.88 = 2.1m shadow
+- Equinox (38°): 4 / tan(38°) = 4 / 0.78 = 5.1m shadow  
+- Winter (15°): 4 / tan(15°) = 4 / 0.27 = 14.9m shadow
+```
+
+**Shadow Impact Table**:
+
+| Season | Solar Elevation | 4m Structure Shadow | Impact |
+|--------|-----------------|---------------------|--------|
+| Summer | 62° | 2.1m | Minimal - shadow stays close to structure |
+| Equinox | 38° | 5.1m | Moderate - adjacent rows affected |
+| Winter | 15° | 14.9m | Severe - shadows extend across multiple bays |
+
+**Practical Implications**:
+- Row orientation (N-S vs E-W) significantly affects shadow distribution
+- N-S orientation: shadows move across rows throughout the day (more even distribution)
+- E-W orientation: shadows fall consistently on north side (permanent shading of some areas)
+
+### Multi-Level Shelf Light Distribution
+
+In vertical farming systems, each shelf level receives fundamentally different light:
+
+```
+Glasshouse Cross-Section:
+                    ┌─────────────────────────────────┐
+                    │            Roof glazing          │
+                    └─────────────────────────────────┘
+                                    │
+                              Natural light
+                                    ▼
+┌─────────────────────────────────────────────────────────┐
+│ Level 4 (Top)    │ 100% available light                 │
+│                  │ Direct sun + diffuse                 │
+├─────────────────────────────────────────────────────────┤
+│ Level 3          │ 50-70% │ Shaded by Level 4 canopy   │
+├─────────────────────────────────────────────────────────┤
+│ Level 2          │ 25-40% │ Cumulative shading         │
+├─────────────────────────────────────────────────────────┤
+│ Level 1 (Bottom) │ 10-20% │ Severe light limitation    │
+└─────────────────────────────────────────────────────────┘
+```
+
+**Light Attenuation Factors**:
+1. **Structural shading**: Shelf frames, supports, irrigation systems
+2. **Canopy shading**: Upper-level plants block light to lower levels
+3. **Glazing transmission**: Glass/polycarbonate typically transmits 85-90% of light
+4. **Cumulative losses**: Each level compounds the reduction
+
+### Shade Avoidance Syndrome (SAS)
+
+Plants have evolved sophisticated mechanisms to detect and respond to shading. This **shade avoidance syndrome** is triggered by changes in light quality, specifically the red:far-red (R:FR) ratio.
+
+**Detection Mechanism**:
+- Chlorophyll absorbs red light (660nm) but transmits far-red (730nm)
+- Under canopy shade, R:FR ratio drops from ~1.2 (full sun) to ~0.2 (deep shade)
+- Phytochrome photoreceptors detect this shift and trigger responses
+
+**Shade Avoidance Responses**:
+
+| Response | Description | Agricultural Impact |
+|----------|-------------|---------------------|
+| Stem elongation | Rapid internode extension | Weak, leggy plants; lodging risk |
+| Leaf hyponasty | Leaves angle upward | Reduced light capture efficiency |
+| Reduced branching | Apical dominance increases | Lower yield potential |
+| Accelerated flowering | Early reproduction trigger | Premature bolting; reduced vegetative growth |
+| Reduced chlorophyll | Pale, thin leaves | Lower photosynthetic capacity |
+| Resource reallocation | Energy diverted to height growth | Reduced root development; lower fruit set |
+
+**Management Strategies**:
+- Maintain adequate spacing to prevent mutual shading
+- Use supplemental lighting to improve R:FR ratios on lower shelves
+- Select shade-tolerant varieties for lower positions
+- Monitor for early signs: elongated internodes, pale leaves, upward leaf angles
+
+### ePAR: Extended Photosynthetically Active Radiation
+
+**Definition**: ePAR encompasses the wavelengths of light that drive photosynthesis in plants, traditionally defined as **400-700nm** (PAR), with emerging research suggesting extension to **380-780nm** for complete photomorphogenic effects.
+
+**Measurement**:
+- Unit: **µmol/m²/s** (micromoles of photons per square metre per second)
+- Instrument: Quantum sensor (PAR meter)
+- Integration: Daily Light Integral (DLI) = µmol/m²/s × hours × 0.0036 = mol/m²/day
+
+**ePAR Requirements by Crop Category**:
+
+| Category | Examples | Min ePAR | Optimal ePAR | Max ePAR | Min DLI |
+|----------|----------|----------|--------------|----------|---------|
+| Low-light | Lettuce, spinach, microgreens | 150 | 200-400 | 600 | 12-17 |
+| Medium-light | Herbs, strawberries, peppers | 300 | 400-600 | 800 | 17-25 |
+| High-light | Tomatoes, cucumbers, cannabis | 400 | 600-1000 | 1500 | 25-40 |
+| Very high-light | Roses, cut flowers | 500 | 800-1200 | 2000 | 30-50 |
+
+**Consequences of Incorrect ePAR**:
+
+| Condition | Symptoms | Outcome |
+|-----------|----------|---------|
+| Below minimum | Etiolation, pale leaves, slow growth | Crop failure; unmarketable produce |
+| Below optimal | Reduced yield, extended crop cycle | Economic losses; inefficiency |
+| At optimal | Healthy growth, maximum yield | Target condition |
+| Above optimal | Wasted energy, no additional benefit | Unnecessary electricity costs |
+| Above maximum | Leaf bleaching, heat stress, photoinhibition | Crop damage; reduced quality |
+
+### The Critical Role of PAR Sensors
+
+**Why Measurement is Non-Negotiable**:
+
+Human perception of light (lux, lumens) does not correlate with plant-usable radiation. A space that appears "bright" to humans may be severely light-limited for plants, and vice versa.
+
+**Sensor Deployment Strategy**:
+
+```
+Recommended Sensor Placement:
+┌─────────────────────────────────────────────────────────┐
+│ Level 4    [Sensor]──────────────────────[Sensor]       │
+├─────────────────────────────────────────────────────────┤
+│ Level 3    [Sensor]──────────────────────[Sensor]       │
+├─────────────────────────────────────────────────────────┤
+│ Level 2    [Sensor]──────────────────────[Sensor]       │
+├─────────────────────────────────────────────────────────┤
+│ Level 1    [Sensor]──────────────────────[Sensor]       │
+└─────────────────────────────────────────────────────────┘
+              East side                    West side
+
+Minimum: 1 sensor per shelf level
+Recommended: 2+ sensors per level (capture E-W variation)
+Ideal: Continuous monitoring with data logging
+```
+
+**Data-Driven Decision Making**:
+
+| Without Sensors | With Sensors |
+|-----------------|--------------|
+| Guessing LED runtime | Precise on/off scheduling |
+| Uniform lighting across all levels | Targeted supplementation where needed |
+| Seasonal surprises | Predictive adjustments |
+| Over-lighting (waste) or under-lighting (poor yield) | Optimised energy use and plant performance |
+| Reactive problem-solving | Proactive management |
+
+**Sensor Selection Criteria**:
+- **Spectral range**: Must cover 400-700nm minimum; 380-780nm preferred
+- **Cosine correction**: Essential for accurate readings at oblique angles
+- **Calibration**: NIST-traceable calibration recommended
+- **Data logging**: Continuous recording enables DLI calculation and trend analysis
+- **Connectivity**: IoT-enabled sensors allow remote monitoring and automated control
+
+### Misting, Fogging, and Secondary Radiation Effects
+
+Misting and fogging systems, while essential for humidity control and evaporative cooling, introduce significant but often overlooked impacts on light transmission and plant photosynthesis.
+
+#### The Physics of Light Scattering by Water Droplets
+
+When light encounters water droplets, several phenomena occur:
+
+**Mie Scattering**: Droplets comparable in size to light wavelengths (0.4-0.7µm for PAR) scatter light in all directions. This is the dominant effect in horticultural misting systems where droplet sizes typically range from 10-100µm.
+
+```
+Incident Light Interaction with Water Droplet:
+                    
+        Reflected ↗   
+                  \   
+    Incoming → → → ●  → → → Transmitted (reduced)
+    light         /|\        
+                 / | \       
+        Scattered in multiple directions
+```
+
+**Effects on PAR Transmission**:
+
+| Droplet Size | Scattering Behaviour | PAR Reduction |
+|--------------|---------------------|---------------|
+| Fine fog (<20µm) | High scattering, long suspension time | 15-30% |
+| Medium mist (20-50µm) | Moderate scattering, settles faster | 10-20% |
+| Coarse spray (>50µm) | Lower scattering, rapid settling | 5-15% |
+
+#### Blocking of Secondary (Diffuse) Radiation
+
+In glasshouse environments, plants receive light from two sources:
+1. **Direct radiation**: Sunlight travelling in straight lines from the sun
+2. **Diffuse radiation**: Light scattered by atmosphere, clouds, and reflected from surfaces
+
+**Critical Insight**: Misting disproportionately affects diffuse radiation because:
+- Diffuse light arrives from all angles (hemisphere above canopy)
+- Each path through the mist zone encounters scattering
+- Lower shelves rely more heavily on diffuse light (direct light blocked by upper shelves)
+
+```
+Without Misting:                    With Misting:
+                                    
+   Direct ↓   Diffuse ↘ ↙ ↓        Direct ↓   Diffuse (scattered)
+           \    │    /                    \    ░░░░░░
+            \   │   /                      \   ░░░░░░
+             \  │  /                        \  ░▓▒░░░
+    ┌─────────────────┐            ┌─────────────────┐
+    │   Top Shelf     │            │   Top Shelf     │
+    │ (receives both) │            │ (reduced both)  │
+    ├─────────────────┤            ├─────────────────┤
+    │  Lower Shelf    │            │  Lower Shelf    │
+    │ (diffuse only)  │            │ (severely reduced)│
+    └─────────────────┘            └─────────────────┘
+```
+
+#### Quantifying Misting Impact on DLI
+
+**Measurement Protocol**:
+1. Record baseline PAR at each shelf level (no misting)
+2. Activate misting system at normal operational settings
+3. Record PAR at same positions during misting
+4. Calculate percentage reduction
+5. Multiply by daily misting duration to estimate DLI impact
+
+**Example Calculation**:
+```
+Baseline PAR (no mist): 450 µmol/m²/s
+PAR during misting: 360 µmol/m²/s
+Reduction: (450-360)/450 = 20%
+
+If misting operates 4 hours/day during peak light:
+  - Peak light contribution: 4h × 450 = 1800 µmol/m² equivalent
+  - With misting: 4h × 360 = 1440 µmol/m² equivalent
+  - DLI loss: 360 µmol/m² equivalent = ~1.3 mol/m²/day
+```
+
+#### Thermal Radiation and Infrared Effects
+
+Misting also affects thermal (infrared) radiation:
+
+**Cooling Effect**: 
+- Evaporative cooling reduces leaf temperature
+- Lower leaf temperature can improve photosynthetic efficiency in heat stress conditions
+- Trade-off: PAR reduction vs. thermal benefit
+
+**Infrared Blocking**:
+- Water droplets absorb and scatter infrared radiation
+- Reduces radiative heat load on plants
+- May reduce thermal stress during summer months
+
+#### Management Strategies for Misting
+
+**Timing Optimisation**:
+
+| Time Period | Light Availability | Misting Recommendation |
+|-------------|-------------------|------------------------|
+| Early morning (6-9am) | Low-moderate | Safe to mist |
+| Mid-morning (9-11am) | Increasing | Reduce misting frequency |
+| Solar noon (11am-2pm) | Peak | Avoid misting if possible |
+| Afternoon (2-5pm) | Decreasing | Resume misting |
+| Evening (5pm+) | Low | Safe to mist |
+
+**Sensor-Driven Control**:
+- Link misting to PAR sensors: suppress misting when PAR exceeds threshold
+- Implement humidity-based triggers rather than time-based schedules
+- Use VPD (Vapour Pressure Deficit) control for optimal balance
+
+**Infrastructure Considerations**:
+- Position misting nozzles to minimise light path interference
+- Use larger droplet sizes where humidity requirements allow
+- Consider ultrasonic foggers (finer control) vs. high-pressure misting (coarser droplets)
+- Ensure adequate air movement to disperse mist quickly
+
+### Integration: Bringing It All Together
+
+**The Glasshouse Light Management Framework**:
+
+1. **Baseline Assessment**
+   - Install PAR sensors at all growing positions
+   - Record ePAR readings hourly for minimum 2 weeks
+   - Map light distribution across all levels and seasons
+
+2. **Gap Analysis**
+   - Compare measured ePAR to crop requirements
+   - Identify positions below minimum thresholds
+   - Quantify supplemental lighting needs
+
+3. **Strategic LED Deployment**
+   - Position LEDs based on measured deficits, not assumptions
+   - Apply inverse square law to determine mounting heights
+   - Calculate energy costs vs. yield improvements
+
+4. **Dynamic Control**
+   - Use sensor feedback to trigger LED operation
+   - Implement photoperiod management for day-length-sensitive crops
+   - Adjust seasonally as natural light contribution changes
+
+5. **Continuous Optimisation**
+   - Monitor shade avoidance symptoms
+   - Track DLI against yield data
+   - Refine LED schedules based on performance
+
+---
+
+## Technical Appendix: Algorithms and Implementations
+
+### The Algorithm (Simple Form)
+
+**Step-by-Step Calculation for LEDs:**
 
 1. **Choose a reference distance** (e.g., 1m = reference intensity I)
 2. **Measure new distance** (e.g., 2m)
@@ -176,10 +528,6 @@ Natural Sun (Far):
 | 3m       | 11%       | 1/(3)² = 0.11 |
 | 4m       | 6.25%     | 1/(4)² = 0.0625 |
 
----
-
-## The Algorithm (Mathematical Form)
-
 ### Inverse Square Law Formula
 
 ```
@@ -198,13 +546,8 @@ Using 1m as 100% reference shows how intensity diminishes with distance.
 
 ```
 FUNCTION calculateLightIntensity(referenceDistance, newDistance, referenceIntensity):
-    // Calculate distance ratio
     ratio = referenceDistance / newDistance
-    
-    // Apply inverse square law
     newIntensity = referenceIntensity × (ratio × ratio)
-    
-    // Calculate percentage loss
     percentageLoss = (1 - (ratio × ratio)) × 100
     
     RETURN {
@@ -214,22 +557,15 @@ FUNCTION calculateLightIntensity(referenceDistance, newDistance, referenceIntens
     }
 END FUNCTION
 
-// Example usage (using 1m as reference):
-result = calculateLightIntensity(1.0, 2.0, 100)
-// Returns: { intensity: 25, percentage: 25%, loss: 75% }
+// Example: calculateLightIntensity(1.0, 2.0, 100) → { intensity: 25, percentage: 25%, loss: 75% }
 ```
 
 ### JavaScript Implementation
 
 ```javascript
 function calculateLEDLightIntensity(referenceDistance, newDistance, referenceIntensity) {
-    // Calculate distance ratio
     var ratio = referenceDistance / newDistance;
-    
-    // Apply inverse square law: I₂ = I₁ × (d₁/d₂)²
     var newIntensity = referenceIntensity * (ratio * ratio);
-    
-    // Calculate percentage and loss
     var percentage = (ratio * ratio) * 100;
     var loss = (1 - (ratio * ratio)) * 100;
     
@@ -241,9 +577,7 @@ function calculateLEDLightIntensity(referenceDistance, newDistance, referenceInt
     };
 }
 
-// Example: Calculate light at 2.0m when reference is 1.0m at 100%
-var result = calculateLEDLightIntensity(1.0, 2.0, 100);
-// Result: { intensity: 25, percentage: 25, loss: 75, ratio: 0.5 }
+// Example: calculateLEDLightIntensity(1.0, 2.0, 100) → { intensity: 25, percentage: 25, loss: 75, ratio: 0.5 }
 ```
 
 ### Python Implementation
@@ -261,13 +595,8 @@ def calculate_led_light_intensity(reference_distance, new_distance, reference_in
     Returns:
         Dictionary with intensity, percentage, loss, and ratio
     """
-    # Calculate distance ratio
     ratio = reference_distance / new_distance
-    
-    # Apply inverse square law: I₂ = I₁ × (d₁/d₂)²
     new_intensity = reference_intensity * (ratio ** 2)
-    
-    # Calculate percentage and loss
     percentage = (ratio ** 2) * 100
     loss = (1 - (ratio ** 2)) * 100
     
@@ -278,45 +607,60 @@ def calculate_led_light_intensity(reference_distance, new_distance, reference_in
         'ratio': round(ratio, 3)
     }
 
-# Example: Calculate light at 2.0m when reference is 1.0m at 100%
-result = calculate_led_light_intensity(1.0, 2.0, 100)
-# Result: {'intensity': 25.0, 'percentage': 25.0, 'loss': 75.0, 'ratio': 0.5}
+# Example: calculate_led_light_intensity(1.0, 2.0, 100) → {'intensity': 25.0, 'percentage': 25.0, 'loss': 75.0, 'ratio': 0.5}
 ```
 
-### Natural Sunlight Calculation
+### Shadow Length Calculator
 
-```javascript
-function calculateNaturalSunlightChange(plantHeightChange) {
-    var sunDistance = 150000000000; // 150 million km in meters
-    var originalDistance = sunDistance;
-    var newDistance = sunDistance - plantHeightChange; // Moving closer
-    
-    // Calculate change using inverse square law
-    var ratio = originalDistance / newDistance;
-    var change = ((ratio * ratio) - 1) * 100;
-    
-    return {
-        originalDistance: sunDistance,
-        newDistance: newDistance,
-        change: parseFloat(change.toFixed(10)),
-        practicalChange: "Essentially zero"
-    };
-}
+```python
+import math
 
-// Example: Moving plants 1.5m closer to sun
-var result = calculateNaturalSunlightChange(1.5);
-// Result: { change: 0.000000001%, practicalChange: "Essentially zero" }
+def calculate_shadow_length(structure_height, solar_elevation_degrees):
+    """
+    Calculate shadow length from a structure based on solar elevation.
+    
+    Args:
+        structure_height: Height of structure in meters
+        solar_elevation_degrees: Solar elevation angle in degrees
+    
+    Returns:
+        Shadow length in meters
+    """
+    solar_elevation_radians = math.radians(solar_elevation_degrees)
+    shadow_length = structure_height / math.tan(solar_elevation_radians)
+    return round(shadow_length, 1)
+
+# Examples:
+# Summer (62°): calculate_shadow_length(4, 62) → 2.1m
+# Equinox (38°): calculate_shadow_length(4, 38) → 5.1m
+# Winter (15°): calculate_shadow_length(4, 15) → 14.9m
 ```
 
 ---
 
 ## Key Takeaways
 
+### LED Physics
 1. ✅ **Use 1m as reference (100%)** - compare all other distances to this
 2. ✅ **Double the distance = quarter the light** (inverse square law)
 3. ✅ **Halve the distance = quadruple the light** (works both ways)
-4. ✅ **Natural sunlight** is unaffected by canopy height
-5. ✅ **LED placement matters** - natural light placement doesn't
+
+### Natural Sunlight
+4. ✅ **Distance to sun is irrelevant** - but angle and structures are everything
+5. ✅ **Solar elevation changes seasonally** - 15° (winter) to 62° (summer) at UK latitudes
+6. ✅ **A 4m structure casts a 15m shadow in winter** - plan accordingly
+
+### Glasshouse Vertical Growing
+7. ✅ **Each shelf level receives different light** - top may get 100%, bottom only 10-20%
+8. ✅ **Shade avoidance syndrome is real** - plants stretch, weaken, and underperform in low light
+9. ✅ **ePAR measurement is non-negotiable** - human perception of brightness is irrelevant to plants
+10. ✅ **PAR sensors enable data-driven decisions** - guessing is not a strategy
+
+### Misting and Environmental Control
+11. ✅ **Misting reduces PAR by 10-30%** - water droplets scatter and reflect incoming light
+12. ✅ **Lower shelves suffer most from misting** - they rely on diffuse light which is disproportionately affected
+13. ✅ **Time misting to avoid peak light hours** - schedule for early morning or late afternoon
+14. ✅ **Factor misting into DLI calculations** - cumulative daily impact can be significant
 
 ---
 
