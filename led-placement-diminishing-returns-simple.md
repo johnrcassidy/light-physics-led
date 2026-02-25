@@ -48,7 +48,7 @@ The **reference distance** is the distance from the LED to the nearest shelf - t
 
 **The Good News**:
 - Natural sunlight from the sun works completely differently
-- The sun is so far away (150 million kilometers!) that moving your plants a few meters makes no difference at all
+- The sun is so far away (150 million kilometres!) that moving your plants a few metres makes no difference at all
 - Whether your plants are 1 metre or 4 metres from the ground, they get the same sunlight
 
 **What This Means**:
@@ -333,7 +333,7 @@ You cannot manage what you do not measure. Install PAR sensors, map your light e
 
 ## Why the Sensor Head Matters: The Foundation of All Measurement
 
-Every measurement in this document—ePAR, PPFD, DLI—depends entirely on one thing: **the sensor head**. Get this wrong, and everything that follows is unreliable.
+Every measurement in this document (ePAR, PPFD, DLI) depends entirely on one thing: **the sensor head**. Get this wrong, and everything that follows is unreliable.
 
 ### The Problem with Cheap Sensors
 
@@ -346,7 +346,7 @@ Many devices claim to measure PPFD (Photosynthetic Photon Flux Density), but the
 
 ### What a True ePAR Sensor Does
 
-A genuine ePAR sensor (like Apogee instruments) directly measures photons in the 400-750nm range—the wavelengths plants actually use. There's no conversion, no approximation.
+A genuine ePAR sensor (like Apogee instruments) directly measures photons in the 400-750nm range, the wavelengths plants actually use. There is no conversion, no approximation.
 
 **All other values derive from this primary measurement**:
 - **DLI** (Daily Light Integral) = cumulative PAR photons hitting the sensor over a day
@@ -397,7 +397,7 @@ Before trusting any light data:
 4. Know whether raw PAR is measured or transformed from lux
 5. Check timestamp synchronisation if comparing multiple data sources
 
-The sensor head is the foundation. Everything else—DLI calculations, LED scheduling, yield predictions—stands or falls on this foundation.
+The sensor head is the foundation. Everything else (DLI calculations, LED scheduling, yield predictions) stands or falls on this foundation.
 
 ---
 

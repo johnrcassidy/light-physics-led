@@ -47,9 +47,9 @@ The reference distance is the distance from the LED to the nearest shelf - this 
 Natural PAR from the sun works differently:
 
 - **At 1 metre height**: Full sunlight
-- **At 4 meters height**: Still full sunlight (no practical difference)
+- **At 4 metres height**: Still full sunlight (no practical difference)
 
-**Why?** The sun is 150 million kilometers away. Moving your plants a few meters closer or further makes zero difference. The distance to the sun is essentially the same.
+**Why?** The sun is 150 million kilometres away. Moving your plants a few metres closer or further makes zero difference. The distance to the sun is essentially the same.
 
 ---
 
@@ -122,8 +122,8 @@ Natural Sun (Far):
 ### Why Natural Sunlight Doesn't Change
 
 **The Physics**:
-- The sun is **150,000,000,000 meters** away
-- Moving plants a few meters closer = essentially 0% change
+- The sun is **150,000,000,000 metres** away
+- Moving plants a few metres closer = essentially 0% change
 - The distance is so huge that tiny movements make **zero practical difference**
 
 **Simple Analogy**:
@@ -147,8 +147,8 @@ Natural Sun (Far):
 
 ### Natural Sun: No Practical Change
 
-- **Distance to sun**: 150,000,000,000 meters
-- **Moving plants**: a few meters
+- **Distance to sun**: 150,000,000,000 metres
+- **Moving plants**: a few metres
 - **Change**: essentially 0% (negligible)
 
 ---
@@ -611,8 +611,8 @@ def calculate_led_light_intensity(reference_distance, new_distance, reference_in
     Calculate light intensity using inverse square law.
     
     Args:
-        reference_distance: Distance where reference intensity is measured (meters)
-        new_distance: New distance to calculate intensity for (meters)
+        reference_distance: Distance where reference intensity is measured (metres)
+        new_distance: New distance to calculate intensity for (metres)
         reference_intensity: Light intensity at reference distance (percentage or absolute)
     
     Returns:
@@ -643,11 +643,11 @@ def calculate_shadow_length(structure_height, solar_elevation_degrees):
     Calculate shadow length from a structure based on solar elevation.
     
     Args:
-        structure_height: Height of structure in meters
+        structure_height: Height of structure in metres
         solar_elevation_degrees: Solar elevation angle in degrees
     
     Returns:
-        Shadow length in meters
+        Shadow length in metres
     """
     solar_elevation_radians = math.radians(solar_elevation_degrees)
     shadow_length = structure_height / math.tan(solar_elevation_radians)
@@ -689,7 +689,7 @@ def calculate_shadow_length(structure_height, solar_elevation_degrees):
 
 ## The Sensor Head: Foundation of All Light Measurement
 
-Every value discussed in this document—ePAR, PPFD, DLI, and all derived metrics—is fundamentally dependent on one critical component: **the sensor head**. Understanding how sensor heads work, and why quality matters, is essential for any data-driven approach to controlled environment agriculture.
+Every value discussed in this document (ePAR, PPFD, DLI, and all derived metrics) is fundamentally dependent on one critical component: **the sensor head**. Understanding how sensor heads work, and why quality matters, is essential for any data-driven approach to controlled environment agriculture.
 
 ### The Measurement Chain: Sensor Head to Decision
 
@@ -823,7 +823,7 @@ Measuring PAR from natural sunlight and from LED fixtures presents different tec
 Before using light measurements for management decisions, verify:
 
 - [ ] **Sensor head identified**: Model number and manufacturer known
-- [ ] **Technical datasheet obtained**: Not marketing materials—actual specifications
+- [ ] **Technical datasheet obtained**: Not marketing materials, actual specifications
 - [ ] **Measurement type confirmed**: Direct quantum measurement or lux transform?
 - [ ] **Accuracy stated**: What is the manufacturer-stated accuracy (e.g., ±5%)?
 - [ ] **Spectral range confirmed**: PAR (400-700nm) or ePAR (400-750nm)?
@@ -832,7 +832,7 @@ Before using light measurements for management decisions, verify:
 - [ ] **Timestamps aligned**: Are all data sources synchronised to the same time reference?
 - [ ] **Light source considered**: Is the sensor appropriate for the light source (sun/LED/HPS)?
 
-**The sensor head is the foundation of all measurement. Everything else—DLI calculations, supplemental lighting schedules, yield predictions, energy optimisation—stands or falls on this foundation.**
+**The sensor head is the foundation of all measurement. Everything else (DLI calculations, supplemental lighting schedules, yield predictions, energy optimisation) stands or falls on this foundation.**
 
 ---
 
