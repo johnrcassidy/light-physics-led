@@ -28,10 +28,10 @@ This document applies the inverse square law to LED lighting placement in agricu
 
 Light intensity diminishes according to the inverse square law:
 
-- **At 1 meter**: Reference intensity - call this 100%
-- **At 2 meters**: 25% of the 1-meter intensity
-- **At 3 meters**: 11% of the 1-meter intensity
-- **At 4 meters**: 6.25% of the 1-meter intensity
+- **At 1 metre**: Reference intensity - call this 100%
+- **At 2 metres**: 25% of the 1-metre intensity
+- **At 3 metres**: 11% of the 1-metre intensity
+- **At 4 metres**: 6.25% of the 1-metre intensity
 
 **Why?** Light spreads out in all directions from a point source. When you double the distance, the same light energy covers 4× the area, resulting in ¼ the intensity.
 
@@ -43,7 +43,7 @@ Light intensity diminishes according to the inverse square law:
 
 Natural PAR from the sun works differently:
 
-- **At 1 meter height**: Full sunlight
+- **At 1 metre height**: Full sunlight
 - **At 4 meters height**: Still full sunlight (no practical difference)
 
 **Why?** The sun is 150 million kilometers away. Moving your plants a few meters closer or further makes zero difference. The distance to the sun is essentially the same.
@@ -90,7 +90,7 @@ Natural Sun (Far):
 - Your plants get only **25% of what you're paying for**
 - You waste electricity and money
 
-**Solution**: Keep LEDs as close to the canopy as practical to maximize efficiency. Halving the distance quadruples the light intensity.
+**Solution**: Keep LEDs as close to the canopy as practical to maximise efficiency. Halving the distance quadruples the light intensity.
 
 ### Natural Light Strategy
 
@@ -112,8 +112,8 @@ Natural Sun (Far):
 
 **Simple Analogy**: 
 - Imagine spraying paint from a can
-- At 1 meter: paint covers 1 square meter (thick coverage)
-- At 2 meters: paint covers 4 square meters (thin coverage - 1/4 as thick)
+- At 1 metre: paint covers 1 square metre (thick coverage)
+- At 2 metres: paint covers 4 square metres (thin coverage - 1/4 as thick)
 - Same amount of paint, but spread thinner
 
 ### Why Natural Sunlight Doesn't Change
@@ -124,9 +124,9 @@ Natural Sun (Far):
 - The distance is so huge that tiny movements make **zero practical difference**
 
 **Simple Analogy**:
-- You're 1 kilometer from a mountain
-- Moving 1 meter closer doesn't change how big the mountain looks
-- The distance is already so large that 1 meter is nothing
+- You're 1 kilometre from a mountain
+- Moving 1 metre closer doesn't change how big the mountain looks
+- The distance is already so large that 1 metre is nothing
 
 ---
 
@@ -468,7 +468,7 @@ Misting also affects thermal (infrared) radiation:
 **Infrastructure Considerations**:
 - Position misting nozzles to minimise light path interference
 - Use larger droplet sizes where humidity requirements allow
-- Consider ultrasonic foggers (finer control) vs. high-pressure misting (coarser droplets)
+- Consider ultrasonic foggers (finer control) vs high-pressure misting (coarser droplets)
 - Ensure adequate air movement to disperse mist quickly
 
 ### Integration: Bringing It All Together

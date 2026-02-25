@@ -19,15 +19,15 @@
 ### LED Lights
 
 **The Problem**: 
-- LED lights are like flashlights - they shine in one direction
+- LED lights are like torches - they shine in one direction
 - The further away they are, the more the light spreads out
 - Spread out light = weaker light for your plants
 
 **How Light Diminishes** (Inverse Square Law):
-- **At 1 meter**: Reference intensity (call this 100%)
-- **At 2 meters**: 25% of the 1-meter value
-- **At 3 meters**: 11% of the 1-meter value
-- **At 4 meters**: 6.25% of the 1-meter value
+- **At 1 metre**: Reference intensity (call this 100%)
+- **At 2 metres**: 25% of the 1-metre value
+- **At 3 metres**: 11% of the 1-metre value
+- **At 4 metres**: 6.25% of the 1-metre value
 
 **The Rule**: Every time you double the distance, you get only **one-quarter** of the light.
 
@@ -46,7 +46,7 @@
 **The Good News**:
 - Natural sunlight from the sun works completely differently
 - The sun is so far away (150 million kilometers!) that moving your plants a few meters makes no difference at all
-- Whether your plants are 1 meter or 4 meters from the ground, they get the same sunlight
+- Whether your plants are 1 metre or 4 metres from the ground, they get the same sunlight
 
 **What This Means**:
 - You don't need to worry about plant height affecting natural sunlight
