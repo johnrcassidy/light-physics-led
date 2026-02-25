@@ -331,6 +331,76 @@ You cannot manage what you do not measure. Install PAR sensors, map your light e
 
 ---
 
+## Why the Sensor Head Matters: The Foundation of All Measurement
+
+Every measurement in this document—ePAR, PPFD, DLI—depends entirely on one thing: **the sensor head**. Get this wrong, and everything that follows is unreliable.
+
+### The Problem with Cheap Sensors
+
+Many devices claim to measure PPFD (Photosynthetic Photon Flux Density), but they actually:
+- Use a **cheap lux sensor** internally
+- Apply a **mathematical transform** to convert lux to PPFD
+- The larger the reading, the greater the inaccuracy
+
+**Why this matters**: Lux measures light as humans see it. PPFD measures light as plants use it. They are fundamentally different. A transform from one to the other is an approximation at best, and misleading at worst.
+
+### What a True ePAR Sensor Does
+
+A genuine ePAR sensor (like Apogee instruments) directly measures photons in the 400-750nm range—the wavelengths plants actually use. There's no conversion, no approximation.
+
+**All other values derive from this primary measurement**:
+- **DLI** (Daily Light Integral) = cumulative PAR photons hitting the sensor over a day
+- **PPFD** (Photosynthetic Photon Flux Density) = density of PAR photons hitting a surface per second
+- **PFD** (Photon Flux Density) = similar, with slight differences in frequency range
+
+If your sensor head is inaccurate, every derived value is wrong.
+
+### Data Alignment: Comparing Like with Like
+
+When comparing measurements from different sources, you must know:
+1. **What sensor head** is being used
+2. **The accuracy, range, and resolution** from the technical datasheet (not marketing materials)
+3. **Any conversion methods** applied to the raw data
+
+Without this, you cannot compare readings meaningfully. A 10% error in the sensor becomes a 10% error in your DLI, your supplemental lighting decisions, and ultimately your yield predictions.
+
+### Why Apogee Instruments
+
+Apogee Instruments are world-class developers and manufacturers of sensing equipment in this specialist field. Their ePAR sensors:
+- Directly measure photons (no lux conversion)
+- Are designed by scientists for scientific accuracy
+- Provide traceable calibration to known standards
+- Include technical datasheets with stated accuracy, range, and resolution
+
+**Link**: [Apogee ePAR Sensors](https://www.apogeeinstruments.com/epar-sensors/)
+
+### Sun vs LED: Different Measurement Challenges
+
+Measuring PAR from the sun and from LEDs have different limiting factors:
+
+| Source | Challenge | Why It Matters |
+|--------|-----------|----------------|
+| **Sun** | Angle of incidence changes throughout day | Sensor must have good cosine correction |
+| **LEDs** | Point source with rapid intensity falloff | Distance to sensor is critical (inverse square law) |
+| **Both** | Spectral composition varies | Sensor must cover full ePAR range (400-750nm) |
+
+The common factor: **where the light source is relative to the target crop**. This is why sensor placement and sensor quality are inseparable from accurate measurement.
+
+### The Bottom Line on Sensors
+
+**You cannot manage what you do not measure accurately.**
+
+Before trusting any light data:
+1. Confirm the sensor head model and manufacturer
+2. Obtain the technical datasheet (not marketing materials)
+3. Understand the accuracy, range, and resolution
+4. Know whether raw PAR is measured or transformed from lux
+5. Check timestamp synchronisation if comparing multiple data sources
+
+The sensor head is the foundation. Everything else—DLI calculations, LED scheduling, yield predictions—stands or falls on this foundation.
+
+---
+
 ## Need Help?
 
 If you're not sure about your LED placement:

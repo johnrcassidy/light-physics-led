@@ -687,6 +687,155 @@ def calculate_shadow_length(structure_height, solar_elevation_degrees):
 
 ---
 
+## The Sensor Head: Foundation of All Light Measurement
+
+Every value discussed in this document—ePAR, PPFD, DLI, and all derived metrics—is fundamentally dependent on one critical component: **the sensor head**. Understanding how sensor heads work, and why quality matters, is essential for any data-driven approach to controlled environment agriculture.
+
+### The Measurement Chain: Sensor Head to Decision
+
+```
+┌─────────────┐    ┌──────────────┐    ┌─────────────┐    ┌──────────────┐
+│ Sensor Head │ → │ Raw PAR Data │ → │ Derived     │ → │ Management   │
+│ (primary)   │    │ (µmol/m²/s)  │    │ Metrics     │    │ Decisions    │
+└─────────────┘    └──────────────┘    └─────────────┘    └──────────────┘
+       │                  │                  │                   │
+   If wrong,          If wrong,          If wrong,           If wrong,
+   everything         DLI wrong,         LED timing          yield and
+   is wrong           PPFD wrong         wrong               costs wrong
+```
+
+**The sensor head is the primary measurement point.** All subsequent calculations, analyses, and decisions inherit any errors introduced at this stage.
+
+### The Lux-to-PPFD Problem: Why Cheap Sensors Fail
+
+Many devices marketed as "PAR meters" or "PPFD sensors" do not directly measure photosynthetically active radiation. Instead, they:
+
+1. **Measure illuminance (lux)** using a cheap silicon photodiode optimised for human vision
+2. **Apply a mathematical conversion factor** to estimate PPFD
+3. **Present the result as if it were true PPFD**
+
+**Why this is problematic**:
+
+| Measurement | What It Measures | Spectral Weighting |
+|-------------|------------------|-------------------|
+| **Lux** | Light as humans perceive it | Weighted to 555nm (green-yellow, peak human sensitivity) |
+| **PPFD** | Photons plants use for photosynthesis | Equal weighting across 400-700nm |
+| **ePAR** | Extended range including far-red | Equal weighting across 400-750nm |
+
+The spectral composition of light varies significantly between sources:
+- **Sunlight**: Broad spectrum, relatively even distribution
+- **LEDs**: Narrow peaks at specific wavelengths (often 450nm blue, 660nm red)
+- **HPS lamps**: Strong yellow-orange emission
+
+A lux-to-PPFD conversion factor calibrated for sunlight will give incorrect results under LEDs, and vice versa. **The larger the reading, the greater the potential error**, because the conversion factor accumulates error proportionally.
+
+### What True ePAR Sensors Measure
+
+A genuine quantum sensor (such as Apogee ePAR sensors) directly counts photons in the photosynthetically active range using:
+
+- **Filtered photodiodes** with spectral response matched to the ePAR range (400-750nm)
+- **Calibration against NIST-traceable standards**
+- **Cosine correction** for accurate readings at oblique angles of incidence
+
+There is no conversion from lux. The sensor directly measures what plants use.
+
+### Derived Metrics: All Dependent on Primary Measurement
+
+Every derived metric inherits the accuracy (or inaccuracy) of the primary sensor measurement:
+
+| Metric | Definition | Dependence on Sensor |
+|--------|------------|---------------------|
+| **PPFD** | Photosynthetic Photon Flux Density (µmol/m²/s) | Direct measurement from sensor head |
+| **DLI** | Daily Light Integral (mol/m²/day) | PPFD integrated over 24 hours |
+| **PFD** | Photon Flux Density | Similar to PPFD with slight spectral range differences |
+| **Supplemental light requirement** | Gap between measured DLI and crop requirement | Calculated from DLI |
+| **LED runtime** | Hours of supplemental lighting needed | Calculated from PPFD deficit |
+
+**A 10% error in the sensor head propagates to a 10% error in DLI, supplemental lighting calculations, and ultimately yield predictions and energy costs.**
+
+### Data Alignment: Comparing Measurements Across Sources
+
+When integrating data from multiple measurement systems (e.g., handheld meters, fixed sensors, camera-based systems), rigorous attention to data alignment is required.
+
+**For each data source, confirm**:
+
+1. **Sensor head model and manufacturer**
+   - What specific sensor head is used?
+   - Is it a true quantum sensor or a lux-based transform?
+
+2. **Technical specifications** (from datasheet, not marketing materials)
+   - Accuracy (typically ±5% for quality sensors)
+   - Range (e.g., 0-4000 µmol/m²/s)
+   - Resolution (e.g., 0.1 µmol/m²/s)
+   - Spectral range (400-700nm for PAR, 400-750nm for ePAR)
+
+3. **Conversion methods**
+   - Is raw PAR measured directly?
+   - If transformed from lux, what conversion factor is used?
+   - Under what light source was the conversion factor calibrated?
+
+4. **Timestamp synchronisation**
+   - Some systems have data transmission delays (e.g., 24-hour delays)
+   - Timestamps must be aligned before comparing datasets
+   - Time zone handling must be consistent
+
+**Without this information, comparing readings from different sources is not scientifically valid.** You may be comparing a direct measurement to a transformed estimate, or comparing data from different time periods due to transmission delays.
+
+### Apogee Instruments: The Scientific Standard
+
+Apogee Instruments (Logan, Utah, USA) are world-class developers and manufacturers of sensing equipment for agricultural and environmental research. Their sensors are:
+
+- **Designed by scientists** with expertise in photobiology and radiometry
+- **Used by research institutions** worldwide for peer-reviewed studies
+- **NIST-traceable calibration** ensuring measurements can be compared across instruments and institutions
+- **Fully documented** with technical datasheets specifying accuracy, range, resolution, and spectral response
+
+**Apogee ePAR Sensors**: [https://www.apogeeinstruments.com/epar-sensors/](https://www.apogeeinstruments.com/epar-sensors/)
+
+The ePAR sensors extend measurement to 750nm, capturing far-red wavelengths increasingly recognised as important for photomorphogenesis and the Emerson enhancement effect.
+
+### Sun vs LED: Different Measurement Challenges
+
+Measuring PAR from natural sunlight and from LED fixtures presents different technical challenges, both of which relate to **where the light source is relative to the target crop**.
+
+**Natural Sunlight**:
+
+| Factor | Challenge | Sensor Requirement |
+|--------|-----------|-------------------|
+| Angle of incidence | Sun angle changes continuously throughout day and year | Excellent cosine correction |
+| Diffuse component | Significant portion of light is scattered by atmosphere | Hemispherical response |
+| Spectral stability | Relatively consistent spectrum | Standard ePAR spectral response |
+| Distance to source | Effectively infinite (150 million km) | Not a factor |
+
+**LED Fixtures**:
+
+| Factor | Challenge | Sensor Requirement |
+|--------|-----------|-------------------|
+| Point source behaviour | Intensity follows inverse square law | Precise distance measurement |
+| Narrow spectral peaks | LEDs emit at specific wavelengths, not broad spectrum | Correct spectral weighting across ePAR range |
+| Fixture geometry | Light distribution varies with fixture design | Multiple measurement points |
+| Distance sensitivity | Small changes in height significantly affect PPFD | Reference height must be defined (LED to nearest shelf) |
+
+**The common denominator**: Accurate measurement depends on understanding the geometric relationship between light source and sensor, and selecting a sensor head appropriate for the light source being measured.
+
+### Practical Checklist: Before Trusting Any Light Data
+
+Before using light measurements for management decisions, verify:
+
+- [ ] **Sensor head identified**: Model number and manufacturer known
+- [ ] **Technical datasheet obtained**: Not marketing materials—actual specifications
+- [ ] **Measurement type confirmed**: Direct quantum measurement or lux transform?
+- [ ] **Accuracy stated**: What is the manufacturer-stated accuracy (e.g., ±5%)?
+- [ ] **Spectral range confirmed**: PAR (400-700nm) or ePAR (400-750nm)?
+- [ ] **Calibration status**: When was the sensor last calibrated? Is calibration traceable?
+- [ ] **Conversion factors documented**: If any transforms are applied, what are they?
+- [ ] **Timestamps aligned**: Are all data sources synchronised to the same time reference?
+- [ ] **Light source considered**: Is the sensor appropriate for the light source (sun/LED/HPS)?
+
+**The sensor head is the foundation of all measurement. Everything else—DLI calculations, supplemental lighting schedules, yield predictions, energy optimisation—stands or falls on this foundation.**
+
+---
+
 ## Bottom Line
 
 **LEDs**: Distance = Everything. Keep them close.
